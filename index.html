@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body> 
+    <section id="container">
+        <h1 id="title">To do list:</h1>
+        <form id="addToDo">
+            <label for="toDoTitle">Title</label>
+            <input minlength=5 name="title" placeholder="To do title" id="toDoTitle" required/>
+            <label for="toDoDescription">Description</label>
+            <textarea 
+            required           
+             name="description"
+            placeholder="To Do description"
+            id="toDoDescription"></textarea>
+            <button type="submit" id="addToDoBtn">Add to do</button>
+        </form>
+        <div id="toDoList">
+            <div id="incopleteToDo">
+                <h2>In progress</h2>                
+            </div>
+            <br/>
+            <br/>
+            <div id="completedToDo">
+                <h2>Done</h2>
+            </div>
+        </div>
+    </section>    
+ 
+    
+          
+   
+ 
+<script src="index.js"></script>
+</body>
+<style> 
+
+
+
+  
+
+    
+</style>
+
+</html>
