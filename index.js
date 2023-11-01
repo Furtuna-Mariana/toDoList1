@@ -7,15 +7,19 @@ const formTitle = document.getElementById('toDoTitle')
 const formDecription = document.getElementById('toDoDescription')
 const openIcon = document.getElementById('openModalIcon')
 const closeIcon = document.getElementById('closeModalIcon')
+const closeEditIcon = document.getElementById('closeEditModalIcon')
 const modal = document.getElementById('formModal')
+const editModal = document.getElementById('editModal')
 const deleteIcons = document.getElementsByClassName('ri-delete-bin-2-fill')
+const editInput = document.getElementById('editTitle')
 
 openIcon.addEventListener('click', () => {
     modal.classList.add('activeModal')
 })
 
 const closeModal = () => {
-    modal.classList.remove('activeModal')
+    editModal.classList.remove('activeModal')
+    modal.classList.remove('activeModal')    
 }
 
 const changeStatus = (item) =>{    
@@ -26,18 +30,25 @@ const changeStatus = (item) =>{
 }
 
 closeIcon.addEventListener('click', closeModal)
+closeEditIcon.addEventListener('click', closeModal)
 
 const addListItem = (item) => {
     const listTitle = document.createElement('div')   
     const listCheck = document.createElement('input')
     const deleteIcon = document.createElement('i')
+    const editIcon = document.createElement('i')
     deleteIcon.classList.add('ri-delete-bin-2-fill')
+    editIcon.classList.add("ri-pencil-fill")
 
     deleteIcon.addEventListener('click', ()=>{
         deleteToDo(item)
     })
-    // deleteIcon.setAttribute('id', item.title)
 
+    editIcon.addEventListener('click', () => {
+        editModal.classList.add('activeModal')
+        editInput.value = item.title
+
+    })
 
     listCheck.checked = item.checked
     const wrapper = document.createElement('div')
@@ -48,7 +59,9 @@ const addListItem = (item) => {
     listCheck.setAttribute('type', 'checkbox')
     listTitle.innerText = item.title   
     
+    icons.appendChild(editIcon)
     icons.appendChild(deleteIcon)  
+    
 
     details.appendChild(listCheck)
     details.appendChild(listTitle) 
