@@ -4,49 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <title>Document</title>
 </head>
 
-<body> 
-    <section id="container">
-        <h1 id="title">To do list:</h1>
-        <form id="addToDo">
+<body>
+    <div class="modalWrapper" id="formModal" >
+        <form id="addToDo" class="modalContainer">
+            <i class="ri-close-line closeModal" id="closeModalIcon"></i>
             <label for="toDoTitle">Title</label>
-            <input minlength=5 name="title" placeholder="To do title" id="toDoTitle" required/>
-            <label for="toDoDescription">Description</label>
-            <textarea 
-            required           
-             name="description"
-            placeholder="To Do description"
-            id="toDoDescription"></textarea>
-            <button type="submit" id="addToDoBtn">Add to do</button>
+            <input minlength=5 name="title" placeholder="To do title" id="toDoTitle" required class="formInput" />
+            <button type="submit" id="addToDoBtn" class="formBtn">Add to do</button>
         </form>
-        <div id="toDoList">
-            <div id="incopleteToDo">
-                <h2>In progress</h2>                
-            </div>
-            <br/>
-            <br/>
-            <div id="completedToDo">
+    </div>
+
+    <i class="ri-menu-add-line openModal" id="openModalIcon"></i>
+
+    <section id="container" class="listWrapper">
+        
+        <h1 id="title">To do list:</h1>
+
+        <div id="toDoList" class="listContainer">
+            <div class="listSide">
+                <h2>In progress</h2>
+                <div id="incopleteToDo">
+                </div>
+            </div>            
+            <div class="listSide">
                 <h2>Done</h2>
+                <div id="completedToDo">
+
+                </div>
             </div>
         </div>
-    </section>    
- 
-    
-          
-   
- 
-<script src="index.js"></script>
+    </section>
+
+
+
+
+
+    <script src="index.js"></script>
 </body>
-<style> 
+<style>
 
 
 
-  
 
-    
+
+
 </style>
 
 </html>
